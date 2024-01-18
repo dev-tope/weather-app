@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="images/favicon.png" type="image/png">
+  <link rel="stylesheet" href="index.css">
+  <title>myWeather</title>
+</head>
+<body>
+  
+  <div class="container">
+    <div class="background">
+
+    </div>
+    <div class="upper">
+      <header>
+        <div class="logo-div">
+          <img src="images/logo2.png" alt="logo">
+        </div>
+        <div class="title-div">myWeather App</div>
+        <div class="cf-toggle-btn-div">
+         <button class="cf-toggle-btn">Convert to <span class="symbol" data-currentState="">°F</span></button>
+        </div>
+      </header>
+      <main>
+        <div class="infoBox">
+          <div class="grid-center typeset1" id="date"></div>
+          <div class="grid-center typeset2" id="temp"></div>
+          <div class="grid-center" id="imgDiv">
+            <img src="" alt="" id="img">
+          </div>
+          <div class="grid-center typeset1" id="condition"></div>
+          <div class="country-div typeset1" id="countryDiv">
+            <div class="grid-center" id="country">
+              <img src="" alt="" id="flagImg">
+            </div>
+            <div class="grid-center" id="city"></div>
+          </div>
+          <div class="forecast-div" id="forecastDiv">
+            <div class="" id="">
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+            <div class="" id=""></div>
+            <div class="" id=""></div>
+          </div>
+        </div>
+        <div class="data-input">
+          <label for="locationInput">Enter Location</label>
+          <input type="text" id="locationInput" class="location-input">
+          <button id="getBtn" class="btn">Get Weather</button>
+
+        </div>
+      </main>
+    </div>
+  </div>
+
+  
+
+  <script src="app.js"></script>
+</body>
+</html>
