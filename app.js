@@ -3,7 +3,7 @@ let weatherData;
 let flagData;
 
 
-async function getWeatherData(city) {
+const getWeatherData = async (city) => {
   try {
     const response = await fetch(`https://api.weatherapi.com/v1/current.json?key=99e6deaff0e045e3903111056232712&q=${city}&aqi=no`);
     if(!response.ok) {
@@ -29,7 +29,7 @@ async function getFlagURL(country) {
   }
 }
 
-const getInfo = (data) => {
+function getInfo(data) {
   const country = data.location.country;
   const city = data.location.name;
   const conditionDesc = data.current.condition.text;
@@ -118,29 +118,37 @@ getBtn.addEventListener('click', fetchDataAndRender)
 
 currentState = 'c'
 
+
 function renderWeatherData(data, url) {
   date.innerText = getDay();
   city.innerText =  data.city;
   condition.innerText = data.conditionDesc;
-  if(currentState === 'c'){
-    temp.innerText = `${data.tempC}°C`;
-  } else {
-    temp.innerText = `${data.tempF}°F`;
-  }
+  temp.innerText = `${data.tempC}°C`;
   img.src = data.img;
-  
   flagImg.src = url;
+  
 }
 
 
+function renderTemp(data){
+  if(currentState === 'f') {
+    temp.innerText = `${data.tempF}°F`
+  }
+  if (currentState === 'c') {
+    temp.innerText = `${data.tempC}°C`
+  }
+  
+}
 
 toggleBtn.addEventListener('click', () => {
  if(currentState === 'c') {
-  symbol.innerText = "°C"
-  currentState = 'f'
+  currentState = 'f';
+  renderTemp(weatherData);
+  symbol.innerText = '°C';
  } else {
-  symbol.innerText = "°F"
-  currentState = 'c'
+  currentState = 'c';
+  renderTemp(weatherData);
+  symbol.innerText = '°F';
  }
 })
 
