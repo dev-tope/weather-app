@@ -20,7 +20,7 @@
         </div>
         <div class="title-div">myWeather App</div>
         <div class="cf-toggle-btn-div">
-         <button class="cf-toggle-btn">Convert to <span class="symbol" data-currentState="">°F</span></button>
+         <button class="cf-toggle-btn">Convert to <span class="symbol" data-currentState="c">°F</span></button>
         </div>
       </header>
       <main>
@@ -38,22 +38,35 @@
             <div class="grid-center" id="city"></div>
           </div>
           <div class="forecast-div" id="forecastDiv">
-            <div class="" id="">
-              <div></div>
-              <div></div>
-              <div></div>
+            <div class="inner" id="">
+              <div id="forecastDate1"></div>
+              <div class="forecast-img-temp">
+                <div class="" ><img src="" alt="" id="forecastImg1"></div>
+                <div class="typeset3" id="forecastTemp1" data-currentState="c"></div>
+              </div>
+              <div id="forecastDesc1"></div>
             </div>
-            <div class="" id=""></div>
-            <div class="" id=""></div>
+            <div class="inner inner-line" id="">
+              <div id="forecastDate2"></div>
+              <div class="forecast-img-temp">
+                <div class=""><img src="" alt="" id="forecastImg2"></div>
+                <div class="typeset3" id="forecastTemp2" data-currentState="c"></div>
+              </div>
+              <div id="forecastDesc2"></div>
+            </div>
+
           </div>
         </div>
         <div class="data-input">
-          <label for="locationInput">Enter Location</label>
-          <input type="text" id="locationInput" class="location-input">
+          <!-- <label for="locationInput">Enter Location</label> -->
+          <input type="text" id="locationInput" class="location-input" placeholder="Enter Location">
           <button id="getBtn" class="btn">Get Weather</button>
 
         </div>
       </main>
+      <footer>
+        <div>Built by dev-tope | 2024</div>
+      </footer>
     </div>
   </div>
 
